@@ -137,6 +137,8 @@ After a few hours, I have finished the schematic FULLY, and have reviewed it to 
 
 I should probably add redundancies for overheating, since running all these on the same PCB will fry it easily. But I feel like moving on to software for now, so that’ll have to wait until I prepare for the PCB layout.
 
+Btw ignore PB5. I've already removed that label; it's just a small error.
+
 
 **8 hours total**
 
