@@ -67,7 +67,7 @@ We can potentially use the 24V battery volt source to power the Nano by using a 
 
 
 Today’s progress (Elbow joint driver and MCU):
-<img width="1197" alt="Screenshot 2025-07-03 at 10 12 35 PM" src="https://github.com/user-attachments/assets/c6985087-911d-4cae-9457-98bfb65d5afe" />
+<img width="1275" alt="Screenshot 2025-06-27 at 9 21 26 PM" src="https://github.com/user-attachments/assets/9af2c4d6-12c4-4563-8e5a-cb7436273cb4" />
 
 
 
