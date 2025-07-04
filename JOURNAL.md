@@ -57,6 +57,17 @@ I’ll either add this to the robotic arm, or give it as a trinket to my friend.
 
 I can also possibly modify the design to make it act as an error tester later on the road. 
 
+6/22/2026
 
+We’re on vacation, so progress is slow. A wrist-mounted control panel for the arm would be cool as hell, no? We’ll probably have to take on even more disciplines though… Like Embedded UI, power management, and probably ergonomics. Bluetooth for communication, maybe a charge controller for safety, a TFT LCD for affordability and durability, and a MCU for the spi communication; Perhaps an ESP 32 would suit the application. I’ll add this as an idea for next iterations of the arm.
+
+The design for the PCB with the TMC2226-SA motor driver has been commenced, and will probably finish by the end of the day. Moving on next, we’ll figure out the programming and software, and where we can get the mechanical design for the arm. We’ll also tinker around with ROS2, and use Gazebo for simulation (let’s also copy paste the URDF files for the actual arm). My old computer has Ubuntu installed, so let’s do that. 
+
+We can potentially use the 24V battery volt source to power the Nano by using a LM2596 voltage regulator.
+
+
+Today’s progress (Elbow joint driver and MCU):
+
+<img width="1015" alt="Screenshot 2025-07-01 at 11 36 05 AM" src="https://github.com/user-attachments/assets/5d2edde4-98fc-4560-9ddd-3a8d6ddc1cc8" />
 
 
