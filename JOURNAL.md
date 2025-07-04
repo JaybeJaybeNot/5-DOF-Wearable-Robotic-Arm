@@ -57,6 +57,8 @@ I’ll either add this to the robotic arm, or give it as a trinket to my friend.
 
 I can also possibly modify the design to make it act as an error tester later on the road. 
 
+**1 hour**
+
 6/22/2026
 
 We’re on vacation, so progress is slow. A wrist-mounted control panel for the arm would be cool as hell, no? We’ll probably have to take on even more disciplines though… Like Embedded UI, power management, and probably ergonomics. Bluetooth for communication, maybe a charge controller for safety, a TFT LCD for affordability and durability, and a MCU for the spi communication; Perhaps an ESP 32 would suit the application. I’ll add this as an idea for next iterations of the arm.
@@ -69,6 +71,7 @@ We can potentially use the 24V battery volt source to power the Nano by using a 
 Today’s progress (Elbow joint driver and MCU):
 <img width="1275" alt="Screenshot 2025-06-27 at 9 21 26 PM" src="https://github.com/user-attachments/assets/9af2c4d6-12c4-4563-8e5a-cb7436273cb4" />
 
+**3 hours**
 7/1/2025
 Just came back after climbing Mount HuangShan, it was peak (ahahaha).
 
@@ -78,7 +81,7 @@ I work in bursts anyways, so hopefully I can get most of it done today.
 Today’s code:
 
 <img width="501" alt="Screenshot 2025-07-04 at 8 53 39 AM" src="https://github.com/user-attachments/assets/b23884c0-7346-4f23-baf1-be92a8b5a778" />
-
+**3.5 hours**
 
 7/2/2025 
 Further project planning + parts selecting
@@ -120,4 +123,9 @@ AI vision
 (optional) glove to control robotic arm movement
 
 For now, we just need to worry about making A robotic arm. 
+
+After a few hours, I have finished the schematic FULLY, and have reviewed it to have no errors (so far, I will review it once more when I prepare for PCB layout). Here is the full schematic:<img width="891" alt="Screenshot 2025-07-04 at 2 53 10 PM" src="https://github.com/user-attachments/assets/eb6d9896-19d0-4605-a6ab-b803f6b9ad29" />
+
+**5 hours**
+
 
