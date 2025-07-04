@@ -106,7 +106,7 @@ Nema23
 
 Reminder, Driver compatibility is about matching current, voltage, and inductance to the driver’s chopping frequency and thermal rating!
 Thus, the TCM2226-SA will be used to drive the NEMA 17, while the dual TCM2209-LA will be used to drive the NEMA 23. 
-Today's schematic progress:
+Today's schematic progress (so far):
 <img width="920" alt="Screenshot 2025-07-04 at 8 57 01 AM" src="https://github.com/user-attachments/assets/2d6e2721-bcf6-4e3b-b4f0-f074e5bf5a18" />
 
 
@@ -124,8 +124,20 @@ AI vision
 
 For now, we just need to worry about making A robotic arm. 
 
+Taking notes on TMC2209 driver features:
+
+Stealthchop: Silent operation, good for lower velocities
+
+Significantly improved microstepping with low-cost motors - Motor runs smooth and quiet - Absolutely no standby noise - Reduced mechanical resonance yields improved torque
+
+Spreadcycle: Good for higher velocities.
+
+
 After a few hours, I have finished the schematic FULLY, and have reviewed it to have no errors (so far, I will review it once more when I prepare for PCB layout). Here is the full schematic:<img width="891" alt="Screenshot 2025-07-04 at 2 53 10 PM" src="https://github.com/user-attachments/assets/eb6d9896-19d0-4605-a6ab-b803f6b9ad29" />
 
-**5 hours**
+I should probably add redundancies for overheating, since running all these on the same PCB will fry it easily. But I feel like moving on to software for now, so that’ll have to wait until I prepare for the PCB layout.
+
+
+**8 hours total**
 
 
