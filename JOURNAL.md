@@ -47,3 +47,16 @@ Possibilities of using in revision:
 1. harmonic/planatery reducer for motors to extract highest torque instead
 2. Using encoders (AS5600, AS5048A) instead of potentiometer for position feedback. Can be a bit more expensive, and we’ll have to learn some things. 
 
+6/18/2025
+Break: Heart project
+All that planning for the Robotic arm project is stressing me out. So we’re gonna take a break and make a PCB with LED lights in the shape of a heart, lighting up in sequence. This is the schematics I made. 
+Utilizes 2 IC’s:  555 timer to send clock signals in astable mode, and DC4017 to “chase” LEDs in a sequence. Powered by 3 coin batteries, of course. 
+<img width="1015" alt="Screenshot 2025-07-01 at 11 36 05 AM" src="https://github.com/user-attachments/assets/4e5c8cf4-46d5-44bd-8911-38d7d5a51a0b" />
+
+I’ll either add this to the robotic arm, or give it as a trinket to my friend. They gave me a heart keychain a few months ago. Regardless, I’ll make the PCB layout for this in my next break. 
+
+I can also possibly modify the design to make it act as an error tester later on the road. 
+
+
+
+
