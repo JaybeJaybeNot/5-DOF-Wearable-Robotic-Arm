@@ -14,13 +14,21 @@ Problem statement: Two arms can get everything done. But a third one can be nift
 Objectives: wearable Robotic arm that follows the following specifications:  
 
 5 degrees of freedom: wrist, elbow, shoulder roll, shoulder pitch, gripper. 
+
 Graphical User interface that controls arm movements.
+
 minimum payload 100-300 g
+
 Angular accuracy: +/- 2-3 degrees with high-resolution servos or steppers+encoders
+
 Position repeatability: 1-2 mm at full reach. Depends on backlash and compliance
+
 Backlash: <0.5mm. Use zero backlash gearboxes or direct drive.
+
 Delay must be <=500 ms from user input to motor response.
+
  Should stay relatively still when “attached” to the user’s back
+ 
 Should have a safety mechanism so the user doesn’t get shocked by the 24v battery
 
 I may use the local college’s lab to get some cheap hardware. I doubt they have the exact parts, but they may potentially have potentiometers, resistors, capacitors, Microcontrollers, etc. 
