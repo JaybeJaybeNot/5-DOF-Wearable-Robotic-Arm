@@ -69,5 +69,55 @@ We can potentially use the 24V battery volt source to power the Nano by using a 
 Today’s progress (Elbow joint driver and MCU):
 <img width="1275" alt="Screenshot 2025-06-27 at 9 21 26 PM" src="https://github.com/user-attachments/assets/9af2c4d6-12c4-4563-8e5a-cb7436273cb4" />
 
+7/1/2025
+Just came back after climbing Mount HuangShan, it was peak (ahahaha).
 
+Anyways, gonna crank out the basic PID code for the arduino nano and for driving the NEMA 17. Honestly, I am quite inexperienced on implementing PID, even though I know alot about the theory. 
+
+I work in bursts anyways, so hopefully I can get most of it done today.
+Today’s code:
+
+<img width="501" alt="Screenshot 2025-07-04 at 8 53 39 AM" src="https://github.com/user-attachments/assets/b23884c0-7346-4f23-baf1-be92a8b5a778" />
+
+
+7/2/2025 
+Further project planning + parts selecting
+
+Ok, so, we’re gonna keep the pcb Designs, but there will no longer be any centralized PCB (like as if it’s a critical hit area in a video game). Essentially, the drivers will be placed right next to the motors in the form of small PCB’s, with terminals connecting from the base, which houses the MCU, voltage regulator, and whatnot. Wait, so the 24v power supply to the motors will have a long wire too? I wonder if that’ll introduce even more problems.
+
+To offset this, we’ll make the power supply slightly larger than 24V to compensate for the higher resistance (26v, 28v). We’ll also add a bulk cap (100-470 uF) decoupling capacitor as well as a ceramic cap (0.1-1uF).  right next to Vin of Drivers, as well as ferret beads on the power supply line right before the driver. This is a pretty crude, unelegant method but it’ll probably be enough.
+
+Main reason we’re still using our own design for the motor drivers is because they’re lowk expensive ($30+) and too big to fit in the joints.
+
+Final decision:
+
+Main PCB will sit at base of robotic arm, containing the STM32 Bluepill (STM32F103C8Tx); 2 motor drivers for shoulder yaw and shoulder pitch; and a voltage regulator connected to 24v power source. Elbow joint will have their own motor driver for the TMC2209 NEMA 17
+
+Tmc 2209-LA info:
+Footprints and symbol
+Datasheet
+Finally decided on the specific models:
+Nema 17
+Nema23
+(There are links to these in the original doc)
+
+Reminder, Driver compatibility is about matching current, voltage, and inductance to the driver’s chopping frequency and thermal rating!
+Thus, the TCM2226-SA will be used to drive the NEMA 17, while the dual TCM2209-LA will be used to drive the NEMA 23. 
+Today's schematic progress:
+<img width="920" alt="Screenshot 2025-07-04 at 8 57 01 AM" src="https://github.com/user-attachments/assets/2d6e2721-bcf6-4e3b-b4f0-f074e5bf5a18" />
+
+
+Iteration for Mark II:
+Just watched 稚晖君’s video on his dummy robotic arm, and felt kinda envious when compared to my own design. Thus, I have a wishlist for Mark II in case I build a second robotic arm:
+CAN bus
+Per-joint MCUs
+Force sensors
+(Encoders instead of potentiometers)
+Sleeker driver IC layouts
+Smarter GUI
+Power optimization
+AI vision 
+(optional) glove to control robotic arm movement
+
+For now, we just need to worry about making A robotic arm. 
 
