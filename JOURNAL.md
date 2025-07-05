@@ -5,7 +5,7 @@ description: "Fully custom stepper motor robotic arm you can wear on your back, 
 created at: 2025-7-4
 ---
 
-$${\color{white}05/15/2025 \space project \space statement \space and \space planning}$$
+$${\color{white}06/15/2025 \space project \space statement \space and \space planning}$$
 
 I have an idea!
 
