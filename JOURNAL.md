@@ -5,7 +5,7 @@ description: "Fully custom stepper motor robotic arm you can wear on your back, 
 created at: 2025-7-4
 ---
 
-05/15/2025 project statement and planning
+@@ 05/15/2025 project statement and planning @@
 
 I have an idea!
 
