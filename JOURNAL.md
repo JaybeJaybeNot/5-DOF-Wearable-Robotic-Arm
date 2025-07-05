@@ -37,7 +37,9 @@ PLANNING:
 
 VNH5019 modules for motor driving have already been designed and are available for $15-20 a pop. You see, we’re kinda budget-tight, so we’re going to design a PCB with 4 of the bare VNH5019A-E ICs–$5 each– to attach to our Maxon EC-i 40 + GP 10 A gearbox. Also note that the VNH5019 only drives brushed motors.
 
-5/16/2025, Stepper motor possibility (but a few hours later)
+$${\color{white}5/16/2025}$$
+
+Stepper motor possibility (but a few hours later)
 
 The brushed DC motor mentioned earlier is gonna set us back 120 dollars each. We can use a NEMA 23 stepper motor with a large gearbox ratio for the desired torque output instead. Currently thinking 20:1, but I’ll have to see a more experienced engineer later to see if that is possible. Because stepper motors kinda can’t be run using the VNH5019, we’ll instead look into the possibilities of the TMC2226 motor driver. 
 
