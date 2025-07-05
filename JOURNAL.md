@@ -49,7 +49,10 @@ Possibilities of using in revision:
 1. harmonic/planatery reducer for motors to extract highest torque instead
 2. Using encoders (AS5600, AS5048A) instead of potentiometer for position feedback. Can be a bit more expensive, and we’ll have to learn some things. 
 
-6/18/2025
+
+$${\color{white}6/18/2025}$$
+
+
 Break: Heart project
 All that planning for the Robotic arm project is stressing me out. So we’re gonna take a break and make a PCB with LED lights in the shape of a heart, lighting up in sequence. This is the schematics I made. 
 Utilizes 2 IC’s:  555 timer to send clock signals in astable mode, and DC4017 to “chase” LEDs in a sequence. Powered by 3 coin batteries, of course. 
@@ -61,7 +64,9 @@ I can also possibly modify the design to make it act as an error tester later on
 
 **1 hour**
 
-6/22/2026
+
+$${\color{white}6/22/2026}$$
+
 
 We’re on vacation, so progress is slow. A wrist-mounted control panel for the arm would be cool as hell, no? We’ll probably have to take on even more disciplines though… Like Embedded UI, power management, and probably ergonomics. Bluetooth for communication, maybe a charge controller for safety, a TFT LCD for affordability and durability, and a MCU for the spi communication; Perhaps an ESP 32 would suit the application. I’ll add this as an idea for next iterations of the arm.
 
@@ -74,7 +79,10 @@ Today’s progress (Elbow joint driver and MCU):
 <img width="1275" alt="Screenshot 2025-06-27 at 9 21 26 PM" src="https://github.com/user-attachments/assets/9af2c4d6-12c4-4563-8e5a-cb7436273cb4" />
 
 **3 hours**
-7/1/2025
+
+$${\color{white}7/1/2025}$$
+
+
 Just came back after climbing Mount HuangShan, it was peak (ahahaha).
 
 Anyways, gonna crank out the basic PID code for the arduino nano and for driving the NEMA 17. Honestly, I am quite inexperienced on implementing PID, even though I know alot about the theory. 
@@ -85,7 +93,9 @@ Today’s code:
 <img width="501" alt="Screenshot 2025-07-04 at 8 53 39 AM" src="https://github.com/user-attachments/assets/b23884c0-7346-4f23-baf1-be92a8b5a778" />
 **3.5 hours**
 
-7/2/2025 
+
+$${\color{white}7/2/2025}$$
+
 Further project planning + parts selecting
 
 Ok, so, we’re gonna keep the pcb Designs, but there will no longer be any centralized PCB (like as if it’s a critical hit area in a video game). Essentially, the drivers will be placed right next to the motors in the form of small PCB’s, with terminals connecting from the base, which houses the MCU, voltage regulator, and whatnot. Wait, so the 24v power supply to the motors will have a long wire too? I wonder if that’ll introduce even more problems.
