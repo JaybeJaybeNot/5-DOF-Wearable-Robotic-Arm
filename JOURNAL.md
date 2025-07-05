@@ -6,7 +6,7 @@ created at: 2025-7-4
 ---
 
 <code style="color : aqua">05/15/2025 project statement and planning</code>
-
+$${\color{blue}05/15/2025 project statement and planning}$$
 I have an idea!
 
 Problem statement: Two arms can get everything done. But a third one can be nifty, huh? Even if it’s for simple applications, it can still be vastly useful. What if you’re holding everything in your two arms, and you need to open a door? What if you are typing and want to get a glass of water to your lips without breaking momentum? What if, possibly, you are performing a surgery and need some assistance? What if you’re doing some sort of combat sport, and want to get a bit creative? What if you just wanna show off at parties?
