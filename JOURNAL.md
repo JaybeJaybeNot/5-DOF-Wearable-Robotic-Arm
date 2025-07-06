@@ -155,3 +155,29 @@ Btw ignore PB5. I've already removed that label; it's just a small error.
 **8 hours total**
 
 
+$${\color{white}7/6/2025}$$
+
+
+Ok, platformIO is acting up.
+Not only did I lose the Main.cpp file for the main PCB board, but I literally can’t find the folder itself. The folder is also nowhere to be seen on the project tab of VScode. 
+
+So, we’re gonna ditch platformIO for STM32CubeIDE.
+
+Hip hip hooray! We get to rewrite the ENTIRE code for the main PCB, but this time in HAL =D! I can’t WAIT to basically learn a whole different language =DDDDDDDD. 
+
+Just played around with STM32cubeIDE for a while, and followed tutorials on youtube. Phil’s Lab my GOAT fr
+
+<img width="453" alt="Screenshot 2025-07-06 at 4 02 45 AM" src="https://github.com/user-attachments/assets/636b0ca5-89ad-4304-81e2-7a24d0472c74" />
+
+
+Ran into some problems with the clock configurations, seems like the APB1 peripheral clock frequency is too low. 
+
+<img width="783" alt="Screenshot 2025-07-06 at 4 02 58 AM" src="https://github.com/user-attachments/assets/4b1cb971-4f16-4976-8131-b0a8ee446c8b" />
+
+
+After some tweaking and painfully reading the STM32F1 reference manual, this minor speedbump has been remedied. 
+
+<img width="303" alt="Screenshot 2025-07-06 at 4 03 08 AM" src="https://github.com/user-attachments/assets/d12c5c5a-0b27-4c57-9a21-75a65df2ccba" />
+
+Pins are configured, and so are the clocks. Now all we have to do is figure out how to set the STM32 up to receive serial from the Mac, what to do with certain info, and create the GUI. Finally, we’ll create the 3D physical model and we’ll be done. 
+
