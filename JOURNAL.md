@@ -1,4 +1,4 @@
----
+<img width="323" alt="Screenshot 2025-07-06 at 4 08 21 AM" src="https://github.com/user-attachments/assets/b152e404-2b5d-487a-8188-7dae554568d4" />---
 Title: "Wearable 5 axis Robotic Arm"
 author: "Yugang Yao"
 description: "Fully custom stepper motor robotic arm you can wear on your back, operating like a fully controllable third arm by interacting with a GUI."
@@ -180,4 +180,14 @@ After some tweaking and painfully reading the STM32F1 reference manual, this min
 <img width="303" alt="Screenshot 2025-07-06 at 4 03 08 AM" src="https://github.com/user-attachments/assets/d12c5c5a-0b27-4c57-9a21-75a65df2ccba" />
 
 Pins are configured, and so are the clocks. Now all we have to do is figure out how to set the STM32 up to receive serial from the Mac, what to do with certain info, and create the GUI. Finally, we’ll create the 3D physical model and we’ll be done. 
+
+**3 hours**
+
+BTW, I created code for the skeleton of the platformIO main PCB "firmware" IDK if this counts towards the hours, but I lowkey spent a lot of time on it, so I'd be lowkey kinda sad if it doesn't.
+
+[Uploading Screenshot 2025-07-06 at 4.08.21 AM.png…]()
+<img width="381" alt="Screenshot 2025-07-06 at 4 09 12 AM" src="https://github.com/user-attachments/assets/f2535cab-64df-473f-ac1d-045676c1c544" />
+
+***3 hours***
+
 
