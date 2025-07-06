@@ -165,7 +165,7 @@ So, we’re gonna ditch platformIO for STM32CubeIDE.
 
 Hip hip hooray! We get to rewrite the ENTIRE code for the main PCB, but this time in HAL =D! I can’t WAIT to basically learn a whole different language =DDDDDDDD. 
 
-Just played around with STM32cubeIDE for a while, and followed tutorials on youtube. Phil’s Lab my GOAT fr
+Just played around with STM32cubeIDE for a while, and learned from guides/documentations on youtube. Phil’s Lab my GOAT fr
 
 <img width="453" alt="Screenshot 2025-07-06 at 4 02 45 AM" src="https://github.com/user-attachments/assets/636b0ca5-89ad-4304-81e2-7a24d0472c74" />
 
