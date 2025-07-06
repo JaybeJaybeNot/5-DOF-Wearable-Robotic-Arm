@@ -183,5 +183,5 @@ Pins are configured, and so are the clocks. Now all we have to do is figure out 
 
 **3 hours**
 
-
+Note: Kinda been dodging a core problem right now, but we gotta confront the fact that carrying around a 24v battery can kinda cause some lowkey agonizing pain if something goes wrong. So we'll have to overload on safety mechanisms when we get to mechanical design. We'll also have to make additions on our PCB to further prevent overheating 
 
