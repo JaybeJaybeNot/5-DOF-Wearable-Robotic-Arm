@@ -183,5 +183,26 @@ Pins are configured, and so are the clocks. Now all we have to do is figure out 
 
 **3 hours**
 
-Note: Kinda been dodging a core problem right now, but we gotta confront the fact that carrying around a 24v battery can kinda cause some lowkey agonizing pain if something goes wrong. So we'll have to overload on safety mechanisms when we get to mechanical design. We'll also have to make additions on our PCB to further prevent overheating 
+Note: Kinda been dodging a core problem right now, but we gotta confront the fact that carrying around a 24v battery can kinda cause some lowkey agonizing pain if something goes wrong. So we'll have to overload on safety mechanisms when we get to mechanical design. We'll also have to make additions on our PCB to further prevent overheating
+
+$${\color{white}7/17/2025}$$
+
+Just came back from camp, back to the grind. This also means we’ll have to ramp up productivity. A review of the arm:
+Shoulder 
+1. will have 3 D.O.F.
+2. 2 NEMA motors will be driven by main PCB,
+3. 3rd one will be driven by Arduino Nano interfaced via I2C 
+STM32F1 will be master MCU. We have 48 MHz of processing power and we will use the full 48 MHz of it!
+4.Power source: 24 volts, will be placed in a heavily insulated box to prevent shocks
+Elbow:
+A singular Arduino nano and TMC driver for Nema 17. 
+Further iterations might utilize belts to lower torque on elbow
+Wrist: Simple MG90 servo. Just use PWM vro 
+GUI: will be built in tkinter. Interfaces with the Uart serial to STM32. 
+Alright, today we’ll get serial done, and begin on the mechanical design.
+
+This means we'll gonna have to LEARN UART programming, including HAL and serial parsing. Here's the code so far: <img width="528" height="536" alt="Screenshot 2025-07-18 at 9 26 53 PM" src="https://github.com/user-attachments/assets/4b115ff0-7a87-4e16-884a-a468cc88c19a" />
+
+**5 Hours**
+ 
 
