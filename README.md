@@ -6,6 +6,3 @@ Our design will lean somewhat to the right (industry-like) side of difficulty, u
 
 The "quirk" of our project is that the robotic arm will be wearable. Current design ideas include straps similar to those of a hiking backpack, but will possible change in the future due to ergonomic reasons or if I just came up with better ideas. To control the robotic arm, a GUI will be made with sliders that controls each joint, and activators for motor modes (Stealthchop2, spreadcyckle). 
 This is somewhat of an ongoing project, so existing progress will be posted on this page shortly. 
-<img width="1197" alt="Screenshot 2025-07-03 at 10 12 35 PM" src="https://github.com/user-attachments/assets/b8c95fa3-2232-44eb-b2ee-2ae6f2838ebc" />
-<img width="1275" alt="Screenshot 2025-06-27 at 9 21 26 PM" src="https://github.com/user-attachments/assets/fc69e23d-71e2-488b-8dcf-5cfb6a687e1a" />
-The arduino nano microcontroller will specifically be for the motor driver for the elbow joint, placed near one another to reduce EMI. It will communicate with the STM32 using the I2C protocol. 
