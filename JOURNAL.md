@@ -206,3 +206,25 @@ This means we'll gonna have to LEARN UART programming, including HAL and serial 
 **5 Hours**
  
 
+$${\color{white}7/23/2025-7/25/2025}$$
+
+
+
+I have chipped down the DRC more and more on clearance violations, and have connected the pins together finally. We have decided to use GND and power planes for noise and emi reduction, though it will be a bit more expensive. 
+
+We have also finally added PCBway constraints into the settings. Thus, we’ll have to switch from 0402 components to larger ones, because lowk they’re unable to tolerate the close proximity of the components. 
+
+<img width="479" height="574" alt="Screenshot 2025-07-26 at 5 03 54 AM" src="https://github.com/user-attachments/assets/6d06d034-5781-4100-8d05-bf24142a450b" />
+
+
+<img width="466" height="579" alt="Screenshot 2025-07-26 at 5 04 09 AM" src="https://github.com/user-attachments/assets/015a4279-7657-423b-b9db-b4eabddb3378" />
+
+
+We WILL add heat pours in the future—after finishing the DRC.
+
+I have also met with a longtime friend, a Umich alumni in robotics about this design. he says it’s good so far, so that’s something to think about =].
+
+**12 hours**
+
+May seem like a long time, but trust me, I haven’t done something this complex before so I MUST make sure everything runs as good as possible. 
+
