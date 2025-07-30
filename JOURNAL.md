@@ -228,3 +228,343 @@ I have also met with a longtime friend, a Umich alumni in robotics about this de
 
 May seem like a long time, but trust me, I haven’t done something this complex before so I MUST make sure everything runs as good as possible. 
 
+7/26/2025
+
+Yayyyy, mechanical design! Woohoo, Yippee.
+
+Constraints:
+
+1. 0.5-1 meters
+
+2. 2 kg payload minimum.
+
+3. Fully covering circuitry
+
+4. Openable via screws to access circuitry and wires
+
+5. Separate compartment for wires and circuitry
+
+6. Hexagonal comb design. Will have one side honeycomb, the other three sides will be solid
+
+7. 25:1 gearboxes, compromise for torque and speed
+
+8. 7075 or 6061 aluminum for linkages. More Carbon fiber towards end of arm. Steel for joints and base.
+
+9. Planetary gearboxes for zero backlash if we can afford it (probably not for the first design. May be employed for future iterations )
+
+10. Modular end factor for different attachable functions. Module will have plugs that attach to end factor to communicate to a microcontroller on what to do. Will also have latches to maintain connection.
+
+Alright, let's get started.
+
+The specs are as follows: shoulder (base) will have 3 degrees of freedom to mimic actual human arm. Will contain the main PCB, alongside slave MCU PCB to drive the additional motor. The motors will all be NEMA 23s.
+
+The elbow joint will be 1 D.O.F. and uses arduino nano + TMC2226SA for the Nema 17. Will also interface with main PCB. Only comment lightly on the fact that we're using I2C protocol for the ~.33m distance between the main mcu and slave mcu.
+
+The wrist will use SG90S microservo. Optional, actually.
+
+Link length from** shoulder joints to elbow joint will be .33 m**. From** elbow to wrist is .46 m.**
+
+All 3 shoulder motors will be placed closely together at the base to reduce torque
+
+**Joints decisions:**
+
+1. Shoulders:
+
+1. Options:
+
+1. Welded Pivot Bracket joint.
+
+1. Pros:
+
+1. extremely strong and rigid,
+
+2. zero backlash.
+
+2. Cons:
+
+3. Permanent. Make a mistake? Womp womp, you can’t fix it.  You also can’t take them out, so they’re not modular
+
+4. You kinda need to know how to weld, and get welding equipment (DEALBREAKER)
+
+2. **Bolt on bracket system (WE’RE USING THIS ONE)**
+
+3. Pros:
+
+5. Still pretty strong
+
+6. Bolted, not welded (NOT DEALBREAKER)
+
+7. Looks pretty clean
+
+2. Elbow:
+
+2. Clevis + Pin Joint.
+
+3. Pro:
+
+4. Can be laser cutted
+
+5. Pretty compact
+
+6. Strong enough
+
+7. VEX robotics people use it
+
+4. Con:
+
+8. Need retainer clips or shoulder bolts
+
+9. **Needs TIGHT tolerances**
+
+Let’s not talk about end effector for now.
+
+Of course, we’ll also need:
+
+1. Bearings
+
+1. 10 mm bore, 26mm OD Flanged bearing
+
+2. Shaft link hub / coupler
+
+3. Shaft collar
+
+4. Mounting brackets or housing to hold bearings in place and constrain all movements except rotation
+
+2. One side must hold rigidity, (bearing pocket or press-fit)
+
+5. Spacer(s) and Shoulder Bolt / Axle Bolt
+
+3. Prevents axial shrifting, keeps rotations smooth
+
+4. Space prevents the bearing from rubbing against joint arm or frame. Shoulder bolt has a section that fits bearing ID perfectly.
+
+We’ll mount the Nema 17 at elbow. But if we NEED to optimize torque, then we can just place them at the back with a belt loop.
+
+![Enter image alt description](Images/OP9_Image_1.png)
+
+Although there is ONE glaring flaw: The blue shoulder joint is way too thin to carry the rest of the arm. It's only a drawing for a reason. To solve this issue, we'll make the overall base bigger. The overall base will probably have 2 bases: One for the shoulder pitch, the other for the yaw. Then, a Clevis + Pin Joint for the shoulder roll.  \
+ \
+The rectangular holes are probably for ventilation and weight \; we’ll employ that.
+**7/27/2025**
+
+Mechanical design marathon.
+
+Aluminum 6061 is very expensive, [datasheet](https://asm.matweb.com/search/specificmaterial.asp?bassnum=ma6061t6) . So here’s the plan:
+
+1. At the base, we’ll use some sort of steel alloy. Cheaper, but 3 times the density
+
+2. Aluminum 5052 could be a substitute.
+
+I feel the plan right now is model a rough diagram of the arm on paper, create a multidimensional function of stress, strain, load, and torque in terms of density of the material selected, and the width/girth of the arm. THEN we'll choose the components based on our application.
+
+Alright, we’ve finished the analysis of the arm at it’s worst scenario: Perfectly horizontal.
+
+![Enter image alt description](Images/Pry_Image_1.png)
+
+**30 minutes**
+
+Not gonna do other angles, because we’ve already accounted for worst case scenario. Also, it’s probably not likely that it’ll just collapse on itself if i raise it perfectly vertical even if the axial stress is at its strongest.
+
+Time for parts selection!
+
+Code for calculations:
+
+import math
+
+==== Inputs ====
+Geometry (in meters)
+L1 = 0.33      # Length of Link 1
+
+L2 = 0.46      # Length of Link 2
+
+w = 0.1     # Width of rectangular cross-section
+
+h = 0.1       # Height (thickness) of rectangular cross-section
+
+Material (Aluminum 6061-T6)
+E = 68.9e9             # Modulus of Elasticity (Pa)
+
+sigma_y = 276e6        # Yield Strength (Pa)
+
+tau_y = 207e6          # Shear Strength (Pa)
+
+fatigue_strength = 96.5e6 # Fatigue Strength (Pa)
+
+Density = 2700 #kg/m^3
+
+Masses (kg)
+m1 = L1 * Density * w * h       # Mass of Link 1
+
+m2 = L2 * Density * w * h       # Mass of Link 2
+
+payload = 4200                 # force from punch or weight (Newtons)
+
+Angle of payload force relative to the link axis (in degrees)
+theta_deg = 0
+
+theta = math.radians(theta_deg)
+
+Safety Factor
+FoS = 1.5
+
+Gravity
+g = 9.81  # m/s^2
+
+==== Derived geometric properties ====
+A = w * h                         # Cross-sectional area
+
+I = (w * h**3) / 12               # Second moment of area
+
+c = h / 2                         # Distance from neutral axis
+
+==== Forces ====
+P_parallel = payload * math.cos(theta) # Axial component
+
+P_perp = payload * math.sin(theta)     # Transverse (bending) component
+
+==== Torques ====
+tau_elbow = m2 * g * (L2 / 2) + P_perp * L2
+
+tau_shoulder = (m1 * g * (L1 / 2) +m2 * g * (L1 + L2 / 2) +P_perp * (L1 + L2))
+
+==== Stresses ====
+sigma_axial = P_parallel / A
+
+sigma_bending = ((P_perp * (L1 + L2) + (m1 * g * L1/2) + (m2*g*(L1 + L2/2)))  * c) / I
+
+sigma_total = sigma_axial + sigma_bending
+
+AFoS = 276e6 / sigma_total
+
+==== Strain ====
+strain = sigma_total / E
+
+==== Deflection ====
+Tip deflection of link 2 under end load only
+delta = (P_perp * L2**3) / (3 * E * I)
+
+==== Checks ====
+print("=== ROBOTIC ARM STRESS REPORT ===")
+
+print(f"Axial Stress:      {sigma_axial/1e6:.2f} MPa")
+
+print(f"Bending Stress:    {sigma_bending/1e6:.2f} MPa")
+
+print(f"Total Stress:      {sigma_total/1e6:.2f} MPa")
+
+print(f"Strain:            {strain:.5e}")
+
+print(f"Deflection (L2):   {delta*1000:.2f} mm")
+
+print(f"Elbow Torque:      {tau_elbow:.2f} Nm")
+
+print(f"Shoulder Torque:   {tau_shoulder:.2f} Nm")
+
+print(f"factor of safety:   {AFoS}")
+
+print("\n=== SAFETY CHECK ===")
+
+print(f"Yield Limit ({sigma_y/FoS/1e6:.2f} MPa) : {'Yessir!' if sigma_total < sigma_y / FoS else 'No =['}")
+
+print(f"Fatigue Limit ({fatigue_strength/FoS/1e6:.2f} MPa): {'Yessir!' if sigma_total < fatigue_strength / FoS else 'No =['}")
+
+print(f"Deflection Check (< {L2/250:.2e} m): {'Yessir!' if delta < L2/250 else 'No =['}")
+
+We’ll play around with the variables until we find something desirable.
+
+****15 minutes****
+
+Ok so, it turns out that if we were to go with a 0.1 m x 0.1 m approximate cross sectional area of the arm using aluminum 6061, we’ll need 28 Nm of torque… Nema 17 can only produce 0.14-0.75 nm max. We’ll have to redo the PCB to change the Nema 17 to a Nema 23. On top of that, aluminum 6061 is frick-ton expensive even if hollow(~$200 for one link), so we’ll have to find other materials and compromise.
+
+Material alternatives:
+
+1. [Steel 1018](https://www.mwcomponents.com/uploads/Resource-Center/Elgin-Material-Sheets/Carbon-Steel-Grade-1018-Data-Sheet_Elgin.pdf?srsltid=AfmBOooK469iR5Xtp-ZQE9jj60D0VX96fD20AT3H7HLhAtuWL9PXZEUr)
+
+1. 370 MPa yield
+
+2. [A36 steel](https://www.ryerson.com/metal-resources/metal-market-intelligence/a36-steel-plate)
+
+2. 248.2 MPa yield
+
+Material selection later. Let’s just design the arm now.
+
+We’ll begin with the joint, constraint definitions: \
+1. Houses Nema 23 motor
+
+2. Houses the gearbox along the Nema 23 motor
+
+3. Rotate well
+
+4. Holes for wires to connect with motor
+
+There will be 2 type of joints; the shoulder joint, and elbow joint.
+
+That’s basically it honestly
+
+We originally considered HTD5 timing pulleys, but that’s too mechanically advanced for me. So we’re going to use **NEMA23 ****<span style="text - decoration: underline;">worm**</span>** gearbox (50:1)** as simple add ons to the motor. Cheaper than planetory, and we don’t need industrial level precision so we may get away with $150 total. 
+
+[Nema 23 sizes](http://www.piclist.com/techref/io/stepper/nemasizes.htm)
+
+*Just learned the method is called a **Euler angle joint** chain mimicking the **glenohumeral (shoulder) joint**
+
+The first base will be larger than the second base to compensate for having to carry extra weight. We might have to “overengineer: the coupling between the bases to prevent backlash and slippage. Of course the final rotational joint will just be bolt on bracket.
+
+![Enter image alt description](Images/U9n_Image_2.png)
+[example image](https://www.researchgate.net/figure/The-iCub-arm-A-CAD-view-of-the-arm-of-the-iCub-robot-with-superimposed-joint-labels-th_fig3_229010855)
+
+![Enter image alt description](Images/y3I_Image_3.png)
+[inexpensive planetory gearboxes](https://www.omc-stepperonline.com/nema-23-stepper-motor-l-56mm-gear-ratio-50-1-high-precision-planetary-gearbox-23hs22-2804s-hg50?srsltid=AfmBOorzKo3zYEa1jqBecvxOFDW23BkeehO4uh2gfFv6ItN-vEymc9Z2) 
+
+<span style="text - decoration: underline;">7/29/2025</span>
+
+(TORQUE POTENTIALLY TOO LOW)
+
+Ugh, it seems we’ll have to go searching for gearboxes again.
+
+We’ll use **Aliexpress** if we need to. 
+
+![Enter image alt description](Images/SRJ_Image_4.png)
+
+We’ll add bearings to this sliding point later to both reduce stress on the main motor and to reduce friction. Oh, and the lid for this part will be honeycomb pattern for aesthetics and saving on material.
+
+I’m back with the design, and I just realized.
+
+LOOK AT THE SIZE OF THAT THING HOLY C- BANANA FOR SCALE BY THE WAY.
+
+![Enter image alt description](Images/Oh2_Image_5.png)
+Realistically, we have 2 options:
+
+1. Redesign the shoulder from scratch
+
+2. Severely cut down on the container size for each motors.
+
+If we go with number 2, which is the most alluring option by far, we might just have the motors exposed. Cuts back on cost and torque too, I guess.
+
+Main issue comes from the motor + gearbox, which is 0.15 m by itself. Holy-
+
+[Direct motor mount](https://www.omc-stepperonline.com/nema-23-bracket-for-stepper-motor-and-geared-stepper-motor-alloy-steel-bracket-st-m2?language=en&currency=USD&srsltid=AfmBOooK8qa6g0IWq9fvevblhgD680OPMLwRSRrIZ5VgKmFI16Q3KWzENZg&gQT=1), we’ll be using this 
+
+![Enter image alt description](Images/r34_Image_6.png)
+
+Alright, much more manageable now. (Banana for scale)
+
+**5 hours**
+
+7/29/2025
+
+Continued with the mechanical design. We had to dig through various sources to get semi fluent. In short, we’ve decided to use **bracket mounts** to hold the motors in place and **flanged couplers** to get it attached to stuff, ball bearings and honeycomb pattern pending. Of course, there are holes for the I2C wires to go through. 
+
+Finally, we’re finished.
+
+![Enter image alt description](Images/IhY_Image_7.png)
+
+![Enter image alt description](Images/vNz_Image_12.png)
+Now all we have to do is provide the wiring diagram, and BOM.
+
+This is the wiring for now. Of course, **We will add clips during assembly to hold the wires down. **
+
+*****8 hours***** (I didn’t know much about mechanical design)
+
+Even if there are many flaws in the design; Ngl, this has been a wild month, and a wild ride. I’ll never forget the 15 hour PCB marathon on the plane. Oh, and I hope my journals entertained somebody.
+
+
