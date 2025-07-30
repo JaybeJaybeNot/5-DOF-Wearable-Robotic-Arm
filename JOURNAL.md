@@ -228,7 +228,8 @@ I have also met with a longtime friend, a Umich alumni in robotics about this de
 
 May seem like a long time, but trust me, I haven’t done something this complex before so I MUST make sure everything runs as good as possible. 
 
-7/26/2025
+$${\color{white}7/26/2025}$$
+
 
 Yayyyy, mechanical design! Woohoo, Yippee.
 
@@ -340,11 +341,11 @@ Of course, we’ll also need:
 
 We’ll mount the Nema 17 at elbow. But if we NEED to optimize torque, then we can just place them at the back with a belt loop.
 
-![Enter image alt description](Images/OP9_Image_1.png)
 
-Although there is ONE glaring flaw: The blue shoulder joint is way too thin to carry the rest of the arm. It's only a drawing for a reason. To solve this issue, we'll make the overall base bigger. The overall base will probably have 2 bases: One for the shoulder pitch, the other for the yaw. Then, a Clevis + Pin Joint for the shoulder roll.  \
- \
-The rectangular holes are probably for ventilation and weight \; we’ll employ that.
+rectangular holes are probably for ventilation and weight \; we’ll employ that.
+
+**1 Hour**
+
 **7/27/2025**
 
 Mechanical design marathon.
@@ -359,7 +360,7 @@ I feel the plan right now is model a rough diagram of the arm on paper, create a
 
 Alright, we’ve finished the analysis of the arm at it’s worst scenario: Perfectly horizontal.
 
-![Enter image alt description](Images/Pry_Image_1.png)
+<img width="507" height="696" alt="Screenshot 2025-07-30 at 5 43 59 PM" src="https://github.com/user-attachments/assets/7f07bb46-c8ee-4496-afdc-06cf655dd61a" />
 
 **30 minutes**
 
@@ -515,7 +516,7 @@ The first base will be larger than the second base to compensate for having to c
 ![Enter image alt description](Images/y3I_Image_3.png)
 [inexpensive planetory gearboxes](https://www.omc-stepperonline.com/nema-23-stepper-motor-l-56mm-gear-ratio-50-1-high-precision-planetary-gearbox-23hs22-2804s-hg50?srsltid=AfmBOorzKo3zYEa1jqBecvxOFDW23BkeehO4uh2gfFv6ItN-vEymc9Z2) 
 
-<span style="text - decoration: underline;">7/29/2025</span>
+<span style="text - decoration: underline;">**7/29/2025**</span>
 
 (TORQUE POTENTIALLY TOO LOW)
 
@@ -523,7 +524,9 @@ Ugh, it seems we’ll have to go searching for gearboxes again.
 
 We’ll use **Aliexpress** if we need to. 
 
-![Enter image alt description](Images/SRJ_Image_4.png)
+
+<img width="599" height="373" alt="Screenshot 2025-07-30 at 5 45 40 PM" src="https://github.com/user-attachments/assets/69eb8d59-e307-40a5-a765-c2e23022cf8f" />
+
 
 We’ll add bearings to this sliding point later to both reduce stress on the main motor and to reduce friction. Oh, and the lid for this part will be honeycomb pattern for aesthetics and saving on material.
 
@@ -531,7 +534,9 @@ I’m back with the design, and I just realized.
 
 LOOK AT THE SIZE OF THAT THING HOLY C- BANANA FOR SCALE BY THE WAY.
 
-![Enter image alt description](Images/Oh2_Image_5.png)
+
+<img width="598" height="369" alt="Screenshot 2025-07-30 at 5 45 59 PM" src="https://github.com/user-attachments/assets/cdb7e4fe-97a2-4628-b88d-421828d5630c" />
+
 Realistically, we have 2 options:
 
 1. Redesign the shoulder from scratch
@@ -544,7 +549,7 @@ Main issue comes from the motor + gearbox, which is 0.15 m by itself. Holy-
 
 [Direct motor mount](https://www.omc-stepperonline.com/nema-23-bracket-for-stepper-motor-and-geared-stepper-motor-alloy-steel-bracket-st-m2?language=en&currency=USD&srsltid=AfmBOooK8qa6g0IWq9fvevblhgD680OPMLwRSRrIZ5VgKmFI16Q3KWzENZg&gQT=1), we’ll be using this 
 
-![Enter image alt description](Images/r34_Image_6.png)
+<img width="593" height="470" alt="Screenshot 2025-07-30 at 5 46 28 PM" src="https://github.com/user-attachments/assets/1eac011d-3679-4bb1-8c70-aabdb777cb1a" />
 
 Alright, much more manageable now. (Banana for scale)
 
@@ -556,10 +561,14 @@ Continued with the mechanical design. We had to dig through various sources to g
 
 Finally, we’re finished.
 
-![Enter image alt description](Images/IhY_Image_7.png)
+<img width="636" height="330" alt="Screenshot 2025-07-30 at 5 46 51 PM" src="https://github.com/user-attachments/assets/1c678f0d-0a21-4c7d-9cf3-de1c596dce6f" />
 
-![Enter image alt description](Images/vNz_Image_12.png)
 Now all we have to do is provide the wiring diagram, and BOM.
+<img width="890" height="476" alt="Screenshot 2025-07-30 at 4 51 13 PM" src="https://github.com/user-attachments/assets/3d5edfff-f85d-4ccd-a31d-5025f6356ae3" />
+<img width="498" height="449" alt="Screenshot 2025-07-30 at 4 46 00 PM" src="https://github.com/user-attachments/assets/b1cffdd4-8008-4603-93e3-fc3be4be52d9" />
+<img width="822" height="669" alt="Screenshot 2025-07-30 at 4 37 42 PM" src="https://github.com/user-attachments/assets/a6bea0f9-dece-4872-adee-ffca338e360e" />
+<img width="720" height="632" alt="Screenshot 2025-07-30 at 4 36 12 PM" src="https://github.com/user-attachments/assets/4bde6352-ae98-4f2d-a9ad-8d6c41d2ec75" />
+<img width="784" height="755" alt="Screenshot 2025-07-30 at 4 31 14 PM" src="https://github.com/user-attachments/assets/56fd983e-5d60-4fae-ab3d-d86bf6e82065" />
 
 This is the wiring for now. Of course, **We will add clips during assembly to hold the wires down. **
 
