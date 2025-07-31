@@ -8,6 +8,10 @@ This project was made out of a desire to learn embedded systems, firmware code, 
 <img width="596" height="709" alt="Screenshot 2025-07-26 at 5 40 39 AM" src="https://github.com/user-attachments/assets/bf661694-aa72-473e-a294-8546fdfca423" />
 <img width="586" height="524" alt="Screenshot 2025-07-31 at 12 21 03 AM" src="https://github.com/user-attachments/assets/2c0058ee-2efc-4810-94c6-b18356f61dce" />
 <img width="595" height="616" alt="Screenshot 2025-07-31 at 12 26 04 AM" src="https://github.com/user-attachments/assets/be37b864-1b59-4a60-a729-9444c3980419" />
+
+
+
+
 |120R1                         |FerriteBead         |~                                                               |Inductor_SMD:L_0402_1005Metric                                                            |1  |FIELD6|
 |------------------------------|--------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------|---|------|
 |C1                            |680 uF              |~                                                               |Capacitor_SMD:C_1210_3225Metric                                                           |1  |      |
