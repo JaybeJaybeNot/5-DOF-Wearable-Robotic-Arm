@@ -3,9 +3,12 @@ Title: "Wearable 5 axis Robotic Arm"
 author: "Yugang Yao"
 description: "Fully custom stepper motor robotic arm you can wear on your back, operating like a fully controllable third arm by interacting with a GUI."
 created at: 2025-7-4
+TOTAL HOURS: 50 Hr 15 Minutes (Not including time spent planning, debugging, or reading datasheets because I didn't record them)
 ---
 
 $${\color{white}06/15/2025 \space project \space statement \space and \space planning}$$
+
+
 
 I have an idea!
 
